@@ -14,7 +14,7 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, "dist"),
     compress: true,
-    port: 9000,
+    port: 5000,
     overlay: true,
   },
   module: {
@@ -110,6 +110,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "pages/page.html",
       template: "src/pages/page.html",
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      filename: "pages/admin/home.html",
+      template: "src/pages/admin/home.html",
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      filename: "pages/admin/data.html",
+      template: "src/pages/admin/data.html",
       chunks: ['index']
     }),
     new MiniCssExtractPlugin({ filename: "css/style.css" }),
